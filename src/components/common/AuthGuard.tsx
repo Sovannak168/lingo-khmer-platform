@@ -44,7 +44,7 @@ export function AuthGuard({
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
   // 1. If not authenticated: show Security Login Gate
-  if (!isAuthenticated) {
+  if (!isAuthenticated || !currentUser) {
     const handleLoginSubmit = (e: React.FormEvent) => {
       e.preventDefault();
       setErrorMsg(null);
@@ -289,7 +289,7 @@ export function AuthGuard({
   }
 
   // 2. Role-Based Access Control (RBAC): Check permissions
-  if (allowedRoles && !allowedRoles.includes(currentUser.role)) {
+  if (allowedRoles && currentUser && !allowedRoles.includes(currentUser.role)) {
     return (
       <div className="min-h-[60vh] flex items-center justify-center py-10 px-4">
         <div className="max-w-md w-full rounded-3xl bg-white dark:bg-slate-900 border-2 border-rose-200 dark:border-rose-900 p-8 shadow-xl text-center space-y-4">

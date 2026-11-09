@@ -49,7 +49,7 @@ export function Navbar() {
   const [userDropdownOpen, setUserDropdownOpen] = useState(false);
 
   const navLinks = [
-    { name: t.nav_home, href: "/", icon: BookOpen, isPublic: true },
+    { name: t.nav_home, href: "/", icon: BookOpen },
     { name: t.nav_chinese, href: "/learn-chinese", icon: GraduationCap, badge: "HSK 1-6" },
     { name: t.nav_english, href: "/learn-english", icon: Languages, badge: "IELTS" },
     { name: t.nav_practice, href: "/practice-tests", icon: FileCheck2 },
@@ -187,7 +187,7 @@ export function Navbar() {
                 >
                   <Icon className={cn("w-3.5 h-3.5", link.isAi ? "text-purple-600 dark:text-purple-400" : "")} />
                   <span>{link.name}</span>
-                  {!isAuthenticated && !link.isPublic && (
+                  {!isAuthenticated && (
                     <Lock className="w-2.5 h-2.5 text-slate-400" />
                   )}
                   {link.badge && (
@@ -407,7 +407,7 @@ export function Navbar() {
                   <Icon className="w-4 h-4 text-slate-500" />
                   <span>{link.name}</span>
                 </div>
-                {!isAuthenticated && !link.isPublic && (
+                {!isAuthenticated && (
                   <Lock className="w-3.5 h-3.5 text-slate-400" />
                 )}
               </Link>

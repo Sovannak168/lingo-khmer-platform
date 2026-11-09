@@ -25,11 +25,13 @@ import { useApp } from "@/lib/i18n/LanguageContext";
 import { DisclaimerBanner } from "@/components/common/DisclaimerBanner";
 import { HSK_LEVELS } from "@/lib/mock-data/hsk-data";
 import { ENGLISH_LEVELS } from "@/lib/mock-data/english-data";
+import { AuthGuard } from "@/components/common/AuthGuard";
 
 export default function HomePage() {
   const { t, language, targetLanguage, setTargetLanguage, isAuthenticated } = useApp();
 
   return (
+    <AuthGuard requiredFeatureTitle="LingoKhmer Learning & Examination Platform" requiredFeatureTitleKm="វេទិកាសិក្សា និងប្រឡងភាសាចិន-អង់គ្លេស LingoKhmer">
     <div className="space-y-12 pb-12">
       {/* Top Disclaimer Banner */}
       <DisclaimerBanner />
@@ -347,6 +349,7 @@ export default function HomePage() {
         </div>
       </section>
     </div>
+    </AuthGuard>
   );
 }
 
