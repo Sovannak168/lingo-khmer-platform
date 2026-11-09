@@ -37,7 +37,6 @@ export function Navbar() {
     currentUser,
     isAuthenticated,
     logout,
-    quickDemoLogin,
     currentRole,
     theme,
     toggleTheme,
@@ -120,29 +119,7 @@ export function Navbar() {
                 </Link>
               )}
             </div>
-          ) : (
-            <div className="flex items-center gap-1.5 text-[11px]">
-              <span className="text-slate-500">{t.auth_quick_demo}:</span>
-              <button
-                onClick={() => quickDemoLogin("student")}
-                className="px-2 py-0.5 rounded bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 font-semibold hover:bg-blue-200"
-              >
-                Student
-              </button>
-              <button
-                onClick={() => quickDemoLogin("teacher")}
-                className="px-2 py-0.5 rounded bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300 font-semibold hover:bg-purple-200"
-              >
-                Teacher
-              </button>
-              <button
-                onClick={() => quickDemoLogin("admin")}
-                className="px-2 py-0.5 rounded bg-rose-100 dark:bg-rose-950 text-rose-700 dark:text-rose-300 font-semibold hover:bg-rose-200"
-              >
-                Admin
-              </button>
-            </div>
-          )}
+          ) : null}
         </div>
       </div>
 

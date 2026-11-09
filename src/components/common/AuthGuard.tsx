@@ -33,7 +33,7 @@ export function AuthGuard({
   requiredFeatureTitle,
   requiredFeatureTitleKm,
 }: AuthGuardProps) {
-  const { t, language, currentUser, isAuthenticated, login, register, quickDemoLogin } = useApp();
+  const { t, language, currentUser, isAuthenticated, login, register } = useApp();
 
   const [activeTab, setActiveTab] = useState<"login" | "register">("login");
   const [email, setEmail] = useState("");
@@ -253,36 +253,6 @@ export function AuthGuard({
               </button>
             </form>
           )}
-
-          {/* 1-Click Fast Demo Login for instant testing */}
-          <div className="pt-4 border-t border-slate-100 dark:border-slate-800 space-y-2.5">
-            <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400 text-center">
-              ⚡ {t.auth_quick_demo}
-            </p>
-            <div className="grid grid-cols-3 gap-2 text-center text-xs">
-              <button
-                type="button"
-                onClick={() => quickDemoLogin("student")}
-                className="p-2.5 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-700 dark:bg-blue-950/60 dark:text-blue-300 font-bold border border-blue-200 dark:border-blue-800 transition-colors"
-              >
-                Student (វណ្ណៈ)
-              </button>
-              <button
-                type="button"
-                onClick={() => quickDemoLogin("teacher")}
-                className="p-2.5 rounded-xl bg-purple-50 hover:bg-purple-100 text-purple-700 dark:bg-purple-950/60 dark:text-purple-300 font-bold border border-purple-200 dark:border-purple-800 transition-colors"
-              >
-                Teacher (គ្រូ)
-              </button>
-              <button
-                type="button"
-                onClick={() => quickDemoLogin("admin")}
-                className="p-2.5 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-700 dark:bg-rose-950/60 dark:text-rose-300 font-bold border border-rose-200 dark:border-rose-800 transition-colors"
-              >
-                Admin
-              </button>
-            </div>
-          </div>
         </div>
       </div>
     );
