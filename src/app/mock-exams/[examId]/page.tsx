@@ -22,6 +22,7 @@ import { useApp } from "@/lib/i18n/LanguageContext";
 import { MOCK_EXAMS_DATABASE, MockExam, ExamQuestion } from "@/lib/mock-data/exam-data";
 import { AudioPlayer } from "@/components/common/AudioPlayer";
 import { VoiceRecorder } from "@/components/common/VoiceRecorder";
+import { AuthGuard } from "@/components/common/AuthGuard";
 import { cn, formatTime } from "@/lib/utils";
 
 export default function ExamEngineRoomPage() {
@@ -113,6 +114,7 @@ export default function ExamEngineRoomPage() {
   const flaggedCount = Object.values(flagged).filter(Boolean).length;
 
   return (
+    <AuthGuard requiredFeatureTitle="Timed Examination Engine" requiredFeatureTitleKm="បន្ទប់ប្រឡងសាកល្បងជាក់ស្តែង">
     <div className="space-y-6 pb-16">
       {/* Top Test Control Header */}
       <div className="sticky top-16 z-30 flex items-center justify-between p-4 rounded-2xl bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border border-slate-200 dark:border-slate-800 shadow-md">
@@ -495,6 +497,7 @@ export default function ExamEngineRoomPage() {
         </div>
       )}
     </div>
+    </AuthGuard>
   );
 }
 

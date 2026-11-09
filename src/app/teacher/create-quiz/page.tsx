@@ -13,6 +13,7 @@ import {
   Save
 } from "lucide-react";
 import { useApp } from "@/lib/i18n/LanguageContext";
+import { AuthGuard } from "@/components/common/AuthGuard";
 
 export default function CreateQuizPage() {
   const { t, language } = useApp();
@@ -42,6 +43,7 @@ export default function CreateQuizPage() {
   };
 
   return (
+    <AuthGuard allowedRoles={["teacher", "admin"]} requiredFeatureTitle="Quiz & Exam Builder" requiredFeatureTitleKm="កម្មវិធីបង្កើតកម្រងសំណួរ">
     <div className="space-y-8 pb-12">
       <div className="flex items-center justify-between">
         <Link
@@ -202,6 +204,7 @@ export default function CreateQuizPage() {
         </form>
       </div>
     </div>
+    </AuthGuard>
   );
 }
 

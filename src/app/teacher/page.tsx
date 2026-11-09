@@ -16,11 +16,13 @@ import {
   BookOpen
 } from "lucide-react";
 import { useApp } from "@/lib/i18n/LanguageContext";
+import { AuthGuard } from "@/components/common/AuthGuard";
 
 export default function TeacherDashboardPage() {
   const { t, language } = useApp();
 
   return (
+    <AuthGuard allowedRoles={["teacher", "admin"]} requiredFeatureTitle="Teacher Portal" requiredFeatureTitleKm="ផ្នែកគ្រូបង្រៀន">
     <div className="space-y-8 pb-12">
       {/* Teacher Welcome Header */}
       <div className="rounded-3xl bg-gradient-to-r from-purple-800 via-indigo-800 to-blue-800 text-white p-6 sm:p-8 shadow-lg flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -134,6 +136,7 @@ export default function TeacherDashboardPage() {
         </div>
       </div>
     </div>
+    </AuthGuard>
   );
 }
 

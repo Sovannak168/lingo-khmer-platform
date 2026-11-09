@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, Users, Shield, CheckCircle2, Search, Filter } from "lucide-react";
 import { useApp } from "@/lib/i18n/LanguageContext";
+import { AuthGuard } from "@/components/common/AuthGuard";
 
 export default function AdminUsersPage() {
   const { t, language } = useApp();
@@ -29,6 +30,7 @@ export default function AdminUsersPage() {
   );
 
   return (
+    <AuthGuard allowedRoles={["admin"]} requiredFeatureTitle="User & Role Management" requiredFeatureTitleKm="គ្រប់គ្រងសិស្ស និងគ្រូ">
     <div className="space-y-8 pb-12">
       <div className="flex items-center justify-between">
         <Link
@@ -109,6 +111,7 @@ export default function AdminUsersPage() {
         </div>
       </div>
     </div>
+    </AuthGuard>
   );
 }
 

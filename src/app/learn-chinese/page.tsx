@@ -18,6 +18,7 @@ import { useApp } from "@/lib/i18n/LanguageContext";
 import { HSK_LEVELS, HSK_VOCABULARY, HSK_GRAMMAR } from "@/lib/mock-data/hsk-data";
 import { DisclaimerBanner } from "@/components/common/DisclaimerBanner";
 import { TonePracticeWidget } from "@/components/common/TonePracticeWidget";
+import { AuthGuard } from "@/components/common/AuthGuard";
 import { cn } from "@/lib/utils";
 
 export default function LearnChinesePage() {
@@ -25,6 +26,7 @@ export default function LearnChinesePage() {
   const [selectedTab, setSelectedTab] = useState<"levels" | "tones" | "grammar">("levels");
 
   return (
+    <AuthGuard requiredFeatureTitle="Chinese Standard Curriculum (HSK 1–6)" requiredFeatureTitleKm="កម្មវិធីសិក្សាភាសាចិនស្តង់ដារ (HSK 1–6)">
     <div className="space-y-10 pb-12">
       {/* Header Banner */}
       <div className="rounded-3xl bg-gradient-to-r from-red-600 via-rose-600 to-amber-600 text-white p-8 sm:p-10 shadow-lg relative overflow-hidden">
@@ -230,6 +232,7 @@ export default function LearnChinesePage() {
         </div>
       )}
     </div>
+    </AuthGuard>
   );
 }
 

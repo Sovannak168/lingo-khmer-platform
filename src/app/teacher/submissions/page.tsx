@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { useApp } from "@/lib/i18n/LanguageContext";
 import { AudioPlayer } from "@/components/common/AudioPlayer";
+import { AuthGuard } from "@/components/common/AuthGuard";
 import { cn } from "@/lib/utils";
 
 interface SubmissionItem {
@@ -96,6 +97,7 @@ export default function TeacherSubmissionsPage() {
   };
 
   return (
+    <AuthGuard allowedRoles={["teacher", "admin"]} requiredFeatureTitle="Submission Grading Desk" requiredFeatureTitleKm="កន្លែងកែសំណេរសិស្ស">
     <div className="space-y-8 pb-12">
       <div className="flex items-center justify-between">
         <Link
@@ -269,6 +271,7 @@ export default function TeacherSubmissionsPage() {
         </div>
       </div>
     </div>
+    </AuthGuard>
   );
 }
 

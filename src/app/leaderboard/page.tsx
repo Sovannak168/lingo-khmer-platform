@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { useApp } from "@/lib/i18n/LanguageContext";
 import { LEADERBOARD_STUDENTS } from "@/lib/mock-data/student-data";
+import { AuthGuard } from "@/components/common/AuthGuard";
 import { cn } from "@/lib/utils";
 
 export default function LeaderboardPage() {
@@ -20,6 +21,7 @@ export default function LeaderboardPage() {
   const [timeframe, setTimeframe] = useState<"weekly" | "all_time">("weekly");
 
   return (
+    <AuthGuard requiredFeatureTitle="National Student Leaderboard" requiredFeatureTitleKm="តារាងពិន្ទុឆ្នើមទូទាំងប្រទេស">
     <div className="space-y-8 pb-12">
       {/* Banner */}
       <div className="rounded-3xl bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 text-white p-6 sm:p-8 shadow-md flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -183,6 +185,7 @@ export default function LeaderboardPage() {
         </div>
       </div>
     </div>
+    </AuthGuard>
   );
 }
 

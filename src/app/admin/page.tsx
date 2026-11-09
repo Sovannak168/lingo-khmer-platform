@@ -19,11 +19,13 @@ import {
   ArrowRight
 } from "lucide-react";
 import { useApp } from "@/lib/i18n/LanguageContext";
+import { AuthGuard } from "@/components/common/AuthGuard";
 
 export default function AdminDashboardPage() {
   const { t, language } = useApp();
 
   return (
+    <AuthGuard allowedRoles={["admin"]} requiredFeatureTitle="Admin Console" requiredFeatureTitleKm="ផ្ទាំងគ្រប់គ្រង Admin">
     <div className="space-y-8 pb-12">
       {/* Admin Header */}
       <div className="rounded-3xl bg-gradient-to-r from-rose-900 via-purple-900 to-indigo-950 text-white p-6 sm:p-8 shadow-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -142,6 +144,7 @@ export default function AdminDashboardPage() {
         </div>
       </div>
     </div>
+    </AuthGuard>
   );
 }
 

@@ -7,12 +7,14 @@ import { HanziStrokeViewer } from "@/components/common/HanziStrokeViewer";
 import { TonePracticeWidget } from "@/components/common/TonePracticeWidget";
 import { HSK_VOCABULARY } from "@/lib/mock-data/hsk-data";
 import { useApp } from "@/lib/i18n/LanguageContext";
+import { AuthGuard } from "@/components/common/AuthGuard";
 
 export default function ChinesePracticeStudioPage() {
   const { t, language } = useApp();
   const [selectedWord, setSelectedWord] = useState(HSK_VOCABULARY[0]);
 
   return (
+    <AuthGuard requiredFeatureTitle="Chinese Character & Tone Studio" requiredFeatureTitleKm="ស្ទូឌីយោហាត់គំនូសអក្សរ និងសូរសំឡេងចិន">
     <div className="space-y-10 pb-12">
       <div className="flex items-center justify-between">
         <Link
@@ -85,6 +87,7 @@ export default function ChinesePracticeStudioPage() {
         </div>
       </div>
     </div>
+    </AuthGuard>
   );
 }
 

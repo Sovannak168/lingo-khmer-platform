@@ -36,16 +36,25 @@ import {
 import { useApp } from "@/lib/i18n/LanguageContext";
 import { CURRENT_STUDENT } from "@/lib/mock-data/student-data";
 import { DisclaimerBanner } from "@/components/common/DisclaimerBanner";
+import { AuthGuard } from "@/components/common/AuthGuard";
 import { cn } from "@/lib/utils";
 
 export default function StudentDashboardPage() {
-  const { t, language, targetLanguage, setTargetLanguage, streak, totalXp } = useApp();
-  const student = CURRENT_STUDENT;
+  const { t, language, targetLanguage, setTargetLanguage, streak, totalXp, currentUser } = useApp();
+  const student = currentUser ? {
+    ...CURRENT_STUDENT,
+    name: currentUser.name,
+    email: currentUser.email,
+    avatar: currentUser.avatar,
+    streakDays: currentUser.streakDays || streak,
+    totalXp: currentUser.totalXp || totalXp,
+  } : CURRENT_STUDENT;
 
   const [activeTab, setActiveTab] = useState<"overview" | "analytics" | "weaknesses">("overview");
 
   return (
-    <div className="space-y-8 pb-12">
+    <AuthGuard requiredFeatureTitle="Student Learning Dashboard" requiredFeatureTitleKm="ផ្ទាំងគ្រប់គ្រងការសិក្សារបស់សិស្ស">
+      <div className="space-y-8 pb-12">
       {/* Top Welcome Card */}
       <div className="rounded-3xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-700 text-white p-6 sm:p-8 shadow-lg relative overflow-hidden">
         <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full blur-2xl pointer-events-none -mr-20 -mt-20" />
@@ -426,6 +435,7 @@ export default function StudentDashboardPage() {
         </div>
       </div>
     </div>
+    </AuthGuard>
   );
 }
 

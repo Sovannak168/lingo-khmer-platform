@@ -17,6 +17,7 @@ import {
 import { useApp } from "@/lib/i18n/LanguageContext";
 import { MOCK_EXAMS_DATABASE, MockExam } from "@/lib/mock-data/exam-data";
 import { DisclaimerBanner } from "@/components/common/DisclaimerBanner";
+import { AuthGuard } from "@/components/common/AuthGuard";
 import { cn } from "@/lib/utils";
 
 export default function MockExamsCatalogPage() {
@@ -33,6 +34,7 @@ export default function MockExamsCatalogPage() {
   });
 
   return (
+    <AuthGuard requiredFeatureTitle="Standardized Mock Examinations" requiredFeatureTitleKm="ការប្រឡងសាកល្បងស្តង់ដារ">
     <div className="space-y-10 pb-12">
       {/* Top Disclaimer Banner */}
       <DisclaimerBanner />
@@ -152,6 +154,7 @@ export default function MockExamsCatalogPage() {
         ))}
       </div>
     </div>
+    </AuthGuard>
   );
 }
 

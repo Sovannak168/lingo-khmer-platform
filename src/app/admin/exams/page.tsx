@@ -5,11 +5,13 @@ import Link from "next/link";
 import { ArrowLeft, Award, PlusCircle, Settings, CheckCircle2, Clock } from "lucide-react";
 import { useApp } from "@/lib/i18n/LanguageContext";
 import { MOCK_EXAMS_DATABASE } from "@/lib/mock-data/exam-data";
+import { AuthGuard } from "@/components/common/AuthGuard";
 
 export default function AdminExamsManagementPage() {
   const { t, language } = useApp();
 
   return (
+    <AuthGuard allowedRoles={["admin"]} requiredFeatureTitle="Exam Configurations" requiredFeatureTitleKm="ការកំណត់ប្រឡង">
     <div className="space-y-8 pb-12">
       <div className="flex items-center justify-between">
         <Link
@@ -69,6 +71,7 @@ export default function AdminExamsManagementPage() {
         </div>
       </div>
     </div>
+    </AuthGuard>
   );
 }
 

@@ -20,11 +20,19 @@ import { useApp } from "@/lib/i18n/LanguageContext";
 import { CURRENT_STUDENT } from "@/lib/mock-data/student-data";
 import { CertificateModal } from "@/components/common/CertificateModal";
 import { DisclaimerBanner } from "@/components/common/DisclaimerBanner";
+import { AuthGuard } from "@/components/common/AuthGuard";
 import { cn } from "@/lib/utils";
 
 export default function ProfilePage() {
-  const { t, language, streak, totalXp } = useApp();
-  const student = CURRENT_STUDENT;
+  const { t, language, streak, totalXp, currentUser } = useApp();
+  const student = currentUser ? {
+    ...CURRENT_STUDENT,
+    name: currentUser.name,
+    email: currentUser.email,
+    avatar: currentUser.avatar,
+    streakDays: currentUser.streakDays || streak,
+    totalXp: currentUser.totalXp || totalXp,
+  } : CURRENT_STUDENT;
 
   const [isCertModalOpen, setIsCertModalOpen] = useState(false);
   const [selectedCourseCert, setSelectedCourseCert] = useState({
@@ -43,6 +51,7 @@ export default function ProfilePage() {
   ];
 
   return (
+    <AuthGuard requiredFeatureTitle="User Profile & Certificates" requiredFeatureTitleKm="គណនីខ្ញុំ និងវិញ្ញាបនបត្រ">
     <div className="space-y-8 pb-12">
       <DisclaimerBanner />
 
@@ -252,6 +261,7 @@ export default function ProfilePage() {
         courseTitleKm={selectedCourseCert.titleKm}
       />
     </div>
+    </AuthGuard>
   );
 }
 

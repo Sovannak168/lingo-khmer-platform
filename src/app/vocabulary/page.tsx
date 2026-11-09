@@ -14,6 +14,7 @@ import {
 import { useApp } from "@/lib/i18n/LanguageContext";
 import { HSK_VOCABULARY } from "@/lib/mock-data/hsk-data";
 import { ENGLISH_VOCABULARY } from "@/lib/mock-data/english-data";
+import { AuthGuard } from "@/components/common/AuthGuard";
 import { cn } from "@/lib/utils";
 
 export default function VocabularyPage() {
@@ -75,6 +76,7 @@ export default function VocabularyPage() {
   });
 
   return (
+    <AuthGuard requiredFeatureTitle="Vocabulary Dictionary & Word Bank" requiredFeatureTitleKm="វចនានុក្រមវាក្យសព្ទ">
     <div className="space-y-8 pb-12">
       <div className="rounded-3xl bg-gradient-to-r from-blue-700 via-indigo-700 to-purple-800 text-white p-6 sm:p-8 shadow-md">
         <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
@@ -220,6 +222,7 @@ export default function VocabularyPage() {
         ))}
       </div>
     </div>
+    </AuthGuard>
   );
 }
 

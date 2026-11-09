@@ -18,6 +18,7 @@ import { useApp } from "@/lib/i18n/LanguageContext";
 import { ENGLISH_LEVELS, ENGLISH_VOCABULARY, ENGLISH_GRAMMAR, LISTENING_PRACTICE_SAMPLE } from "@/lib/mock-data/english-data";
 import { AudioPlayer } from "@/components/common/AudioPlayer";
 import { VoiceRecorder } from "@/components/common/VoiceRecorder";
+import { AuthGuard } from "@/components/common/AuthGuard";
 import { cn } from "@/lib/utils";
 
 export default function LearnEnglishPage() {
@@ -50,6 +51,7 @@ export default function LearnEnglishPage() {
   };
 
   return (
+    <AuthGuard requiredFeatureTitle="English Modules (IELTS / TOEFL / TOEIC)" requiredFeatureTitleKm="កម្មវិធីសិក្សាភាសាអង់គ្លេស">
     <div className="space-y-10 pb-12">
       {/* Header Banner */}
       <div className="rounded-3xl bg-gradient-to-r from-blue-700 via-indigo-700 to-purple-800 text-white p-8 sm:p-10 shadow-lg relative overflow-hidden">
@@ -394,6 +396,7 @@ export default function LearnEnglishPage() {
         </div>
       )}
     </div>
+    </AuthGuard>
   );
 }
 

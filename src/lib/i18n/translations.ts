@@ -94,6 +94,20 @@ export interface Translations {
   role_teacher: string;
   role_admin: string;
   switch_role: string;
+
+  // Auth & Security
+  auth_login: string;
+  auth_register: string;
+  auth_logout: string;
+  auth_email: string;
+  auth_password: string;
+  auth_name: string;
+  auth_role: string;
+  auth_login_required: string;
+  auth_login_desc: string;
+  auth_access_denied: string;
+  auth_access_denied_desc: string;
+  auth_quick_demo: string;
 }
 
 export const translations: Record<Language, Translations> = {
@@ -183,6 +197,19 @@ export const translations: Record<Language, Translations> = {
     role_teacher: "Teacher",
     role_admin: "Administrator",
     switch_role: "Switch Demo View",
+
+    auth_login: "Sign In",
+    auth_register: "Sign Up",
+    auth_logout: "Sign Out",
+    auth_email: "Email Address",
+    auth_password: "Password",
+    auth_name: "Full Name",
+    auth_role: "Account Role",
+    auth_login_required: "Account Authentication Required",
+    auth_login_desc: "You must have an account and sign in to access courses, practice vocabulary, use the AI tutor, and take mock examinations.",
+    auth_access_denied: "Access Denied (403 Forbidden)",
+    auth_access_denied_desc: "You do not possess the required security authorization to view this faculty or administrator section.",
+    auth_quick_demo: "1-Click Instant Demo Login",
   },
   km: {
     nav_home: "ទំព័រដើម",
@@ -270,6 +297,18 @@ export const translations: Record<Language, Translations> = {
     role_teacher: "គ្រូបង្រៀន",
     role_admin: "អ្នកគ្រប់គ្រង (Admin)",
     switch_role: "ប្តូរទិដ្ឋភាពសាកល្បង",
+
+    auth_login: "ចូលគណនី",
+    auth_register: "ចុះឈ្មោះ",
+    auth_logout: "ចាកចេញ",
+    auth_email: "អាសយដ្ឋានអ៊ីមែល",
+    auth_password: "ពាក្យសម្ងាត់",
+    auth_name: "ឈ្មោះពេញ",
+    auth_role: "តួនាទីគណនី",
+    auth_login_required: "តម្រូវឱ្យមានគណនី និងចូលប្រើប្រាស់ជាមុនសិន",
+    auth_login_desc: "ដើម្បីធានាសុវត្ថិភាពប្រព័ន្ធ និងកត់ត្រាវឌ្ឍនភាពសិក្សា អ្នកត្រូវតែមានគណនី និងចូលគណនី (Sign In) ជាមុនសិន ទើបអាចចូលរៀនមេរៀន ធ្វើតេស្ត និងប្រើប្រាស់ AI បាន។",
+    auth_access_denied: "គ្មានសិទ្ធិចូលដំណើរការ (Access Denied)",
+    auth_access_denied_desc: "អ្នកមិនមានសិទ្ធិអនុញ្ញាតដើម្បីចូលទៅកាន់ផ្នែកនេះឡើយ។ ទំព័រនេះសម្រាប់តែគ្រូបង្រៀន ឬ Administrator ប៉ុណ្ណោះ។",
+    auth_quick_demo: "ចូលគណនីសាកល្បងរហ័ស (១-Click)",
   },
 };
-

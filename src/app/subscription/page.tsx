@@ -18,6 +18,7 @@ import {
 import { useApp } from "@/lib/i18n/LanguageContext";
 import { SUBSCRIPTION_PLANS, SubscriptionPlan } from "@/lib/mock-data/payment-data";
 import { DisclaimerBanner } from "@/components/common/DisclaimerBanner";
+import { AuthGuard } from "@/components/common/AuthGuard";
 import { cn } from "@/lib/utils";
 
 export default function SubscriptionPricingPage() {
@@ -68,6 +69,7 @@ export default function SubscriptionPricingPage() {
   };
 
   return (
+    <AuthGuard requiredFeatureTitle="Premium Membership & ABA PayWay" requiredFeatureTitleKm="កញ្ចប់ Premium & ការទូទាត់ ABA">
     <div className="space-y-10 pb-16">
       <DisclaimerBanner />
 
@@ -372,6 +374,7 @@ export default function SubscriptionPricingPage() {
         </div>
       )}
     </div>
+    </AuthGuard>
   );
 }
 

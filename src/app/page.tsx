@@ -17,7 +17,9 @@ import {
   ShieldCheck,
   Star,
   Users,
-  Compass
+  Compass,
+  Lock,
+  LogIn
 } from "lucide-react";
 import { useApp } from "@/lib/i18n/LanguageContext";
 import { DisclaimerBanner } from "@/components/common/DisclaimerBanner";
@@ -25,7 +27,7 @@ import { HSK_LEVELS } from "@/lib/mock-data/hsk-data";
 import { ENGLISH_LEVELS } from "@/lib/mock-data/english-data";
 
 export default function HomePage() {
-  const { t, language, targetLanguage, setTargetLanguage } = useApp();
+  const { t, language, targetLanguage, setTargetLanguage, isAuthenticated } = useApp();
 
   return (
     <div className="space-y-12 pb-12">
@@ -39,9 +41,18 @@ export default function HomePage() {
         <div className="absolute bottom-0 left-0 -mb-16 -ml-16 w-96 h-96 rounded-full bg-purple-500/20 blur-3xl pointer-events-none" />
 
         <div className="relative z-10 max-w-3xl space-y-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-semibold text-blue-200">
-            <Sparkles className="w-3.5 h-3.5 text-amber-300" />
-            <span>{t.hero_badge}</span>
+          <div className="flex flex-wrap items-center gap-2">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-semibold text-blue-200">
+              <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+              <span>{t.hero_badge}</span>
+            </div>
+
+            {!isAuthenticated && (
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/20 backdrop-blur-md border border-amber-400/40 text-[11px] font-bold text-amber-300">
+                <Lock className="w-3 h-3" />
+                <span>{language === "km" ? "ប្រព័ន្ធសុវត្ថិភាព៖ តម្រូវឱ្យមានគណនីដើម្បីចូលរៀន" : "Security: Account Required"}</span>
+              </div>
+            )}
           </div>
 
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight sm:leading-snug">
@@ -53,6 +64,17 @@ export default function HomePage() {
           </p>
 
           <div className="flex flex-wrap items-center gap-4 pt-2">
+            {!isAuthenticated ? (
+              <Link
+                href="/login"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 hover:from-amber-600 hover:to-orange-700 text-white font-extrabold text-sm shadow-xl shadow-amber-500/30 transition-all duration-200 hover:scale-102"
+              >
+                <LogIn className="w-4 h-4" />
+                <span>{language === "km" ? "ចូលគណនី / ចុះឈ្មោះជាមុនសិន" : "Sign In / Register First"}</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            ) : null}
+
             <Link
               href="/learn-chinese"
               onClick={() => setTargetLanguage("zh")}

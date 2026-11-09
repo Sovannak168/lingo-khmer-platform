@@ -15,6 +15,7 @@ import {
   PenTool
 } from "lucide-react";
 import { useApp } from "@/lib/i18n/LanguageContext";
+import { AuthGuard } from "@/components/common/AuthGuard";
 import { cn } from "@/lib/utils";
 
 interface ChatMessage {
@@ -112,6 +113,7 @@ export default function AiTutorPage() {
   ];
 
   return (
+    <AuthGuard requiredFeatureTitle="AI Language Tutor" requiredFeatureTitleKm="គ្រូជំនួយភាសា AI ឆ្លាតវៃ">
     <div className="space-y-6 pb-12">
       {/* Header Banner */}
       <div className="rounded-3xl bg-gradient-to-r from-purple-700 via-indigo-700 to-blue-700 text-white p-6 sm:p-8 shadow-md flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -256,6 +258,7 @@ export default function AiTutorPage() {
         </div>
       </div>
     </div>
+    </AuthGuard>
   );
 }
 

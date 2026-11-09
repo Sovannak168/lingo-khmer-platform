@@ -20,6 +20,7 @@ import {
 import { useApp } from "@/lib/i18n/LanguageContext";
 import { MOCK_EXAMS_DATABASE, MockExam } from "@/lib/mock-data/exam-data";
 import { DisclaimerBanner } from "@/components/common/DisclaimerBanner";
+import { AuthGuard } from "@/components/common/AuthGuard";
 import { cn } from "@/lib/utils";
 
 export default function ExamResultReportPage() {
@@ -101,6 +102,7 @@ export default function ExamResultReportPage() {
   }
 
   return (
+    <AuthGuard requiredFeatureTitle="Standardized Exam Diagnostic Report" requiredFeatureTitleKm="របាយការណ៍លទ្ធផលប្រឡងផ្លូវការ">
     <div className="space-y-8 pb-16">
       <DisclaimerBanner />
 
@@ -297,5 +299,6 @@ export default function ExamResultReportPage() {
         </div>
       </div>
     </div>
+    </AuthGuard>
   );
 }

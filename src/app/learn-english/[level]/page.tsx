@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { useApp } from "@/lib/i18n/LanguageContext";
 import { ENGLISH_VOCABULARY, ENGLISH_GRAMMAR } from "@/lib/mock-data/english-data";
+import { AuthGuard } from "@/components/common/AuthGuard";
 import { cn } from "@/lib/utils";
 
 export default function EnglishLevelDetailPage() {
@@ -36,6 +37,7 @@ export default function EnglishLevelDetailPage() {
   };
 
   return (
+    <AuthGuard requiredFeatureTitle={`${levelSlug.toUpperCase()} English Course`} requiredFeatureTitleKm={`វគ្គសិក្សាភាសាអង់គ្លេស ${levelSlug.toUpperCase()}`}>
     <div className="space-y-8 pb-12">
       <div className="flex items-center justify-between">
         <Link
@@ -302,6 +304,7 @@ export default function EnglishLevelDetailPage() {
         </div>
       )}
     </div>
+    </AuthGuard>
   );
 }
 

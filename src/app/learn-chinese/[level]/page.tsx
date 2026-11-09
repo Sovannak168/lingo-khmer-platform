@@ -18,6 +18,7 @@ import {
 import { useApp } from "@/lib/i18n/LanguageContext";
 import { HSK_VOCABULARY, HSK_GRAMMAR, ChineseVocab } from "@/lib/mock-data/hsk-data";
 import { HanziStrokeViewer } from "@/components/common/HanziStrokeViewer";
+import { AuthGuard } from "@/components/common/AuthGuard";
 import { cn } from "@/lib/utils";
 
 export default function HskLevelDetailPage() {
@@ -64,6 +65,7 @@ export default function HskLevelDetailPage() {
   const currentFlashcard = levelVocabList[flashcardIndex] || HSK_VOCABULARY[0];
 
   return (
+    <AuthGuard requiredFeatureTitle={`${formattedLevel} Curriculum`} requiredFeatureTitleKm={`មេរៀន ${formattedLevel}`}>
     <div className="space-y-8 pb-12">
       {/* Back to Chinese Overview */}
       <div className="flex items-center justify-between">
@@ -399,6 +401,7 @@ export default function HskLevelDetailPage() {
         </div>
       )}
     </div>
+    </AuthGuard>
   );
 }
 

@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { useApp } from "@/lib/i18n/LanguageContext";
 import { DisclaimerBanner } from "@/components/common/DisclaimerBanner";
+import { AuthGuard } from "@/components/common/AuthGuard";
 import { cn } from "@/lib/utils";
 
 export default function PracticeTestsPage() {
@@ -104,6 +105,7 @@ export default function PracticeTestsPage() {
   });
 
   return (
+    <AuthGuard requiredFeatureTitle="Practice Test Drills" requiredFeatureTitleKm="លំហាត់អនុវត្តរហ័ស">
     <div className="space-y-8 pb-12">
       <DisclaimerBanner />
 
@@ -205,6 +207,7 @@ export default function PracticeTestsPage() {
         ))}
       </div>
     </div>
+    </AuthGuard>
   );
 }
 
