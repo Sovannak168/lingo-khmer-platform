@@ -1,0 +1,440 @@
+# PROJECT: Professional Chinese & English Learning and Examination Platform
+
+## 1. Your Role
+
+Act as a Senior Full-Stack Developer, UI/UX Designer, Database Architect, AI Engineer, and Educational Technology Specialist.
+
+Your task is to design and develop a professional, production-ready online learning platform for students who want to learn Chinese and English and prepare for internationally recognized language proficiency examinations.
+
+The platform must be scalable, secure, responsive, modern, and easy to use.
+
+## 2. Project Objectives
+
+Build a bilingual language-learning platform supporting:
+
+**Chinese Language**
+- HSK Level 1–6 preparation.
+- HSK vocabulary and grammar.
+- Chinese pronunciation (Pinyin).
+- Chinese characters (汉字).
+- Listening, Reading, Writing, and Speaking.
+- Mock HSK examinations.
+
+**English Language**
+- IELTS Academic and General Training preparation.
+- TOEFL iBT preparation.
+- TOEIC preparation.
+- Cambridge English exam preparation.
+- English vocabulary and grammar.
+- Listening, Reading, Writing, and Speaking.
+- Mock examinations.
+
+The platform must help students measure their proficiency and track their learning progress.
+
+Important: This platform provides exam preparation and estimated practice scores. It must not claim to issue official HSK, IELTS, TOEFL, TOEIC, or Cambridge certificates.
+
+## 3. Technology Stack
+
+Frontend:
+- Next.js (App Router)
+- TypeScript
+- Tailwind CSS
+- Shadcn/UI
+- Lucide Icons
+
+Backend:
+- Next.js API Routes / Route Handlers
+- Supabase
+- PostgreSQL
+- Supabase Authentication
+- Supabase Storage
+
+Additional:
+- Zod validation
+- Recharts for analytics
+- Web Speech API where supported
+- AI integration for language tutoring and writing feedback.
+
+Use clean architecture, reusable components, secure API endpoints, and environment variables.
+
+## 4. Website Design (UI/UX)
+
+Create a premium educational dashboard inspired by Duolingo, Coursera, and modern examination platforms.
+
+Design requirements:
+- Clean and professional interface.
+- Modern typography.
+- White background with blue and purple accents.
+- Responsive design for mobile, tablet, and desktop.
+- Khmer-friendly font support.
+- Smooth animations.
+- Dark Mode and Light Mode.
+- Khmer and English interface languages.
+
+Main navigation:
+1. Home
+2. Learn Chinese
+3. Learn English
+4. Practice Tests
+5. Mock Exams
+6. My Progress
+7. Vocabulary
+8. AI Tutor
+9. Leaderboard
+10. Profile
+
+## 5. Student Dashboard
+
+Create a personalized dashboard displaying:
+
+- Current learning language.
+- Current proficiency level.
+- Daily learning streak.
+- Total learning hours.
+- Vocabulary learned.
+- Completed lessons.
+- Examination scores.
+- Learning progress charts.
+- Recommended lessons.
+- Upcoming practice exams.
+- Weak skills requiring improvement.
+
+## 6. Chinese Learning Module
+
+Create a complete Chinese learning system.
+
+Levels:
+- HSK 1
+- HSK 2
+- HSK 3
+- HSK 4
+- HSK 5
+- HSK 6
+
+Learning features:
+
+Vocabulary:
+- Chinese characters.
+- Pinyin.
+- Khmer meaning.
+- English meaning.
+- Audio pronunciation.
+- Example sentences.
+- Flashcards.
+- Spaced repetition.
+
+Grammar:
+- Grammar explanations in Khmer.
+- Chinese examples.
+- Sentence structures.
+- Practice exercises.
+
+Pronunciation:
+- Listen to native pronunciation.
+- Record student pronunciation.
+- Compare pronunciation where supported.
+- Tone practice (1–4 and neutral tone).
+
+Writing:
+- Chinese character recognition.
+- Stroke-order learning.
+- Sentence construction.
+- Writing exercises.
+
+## 7. English Learning Module
+
+Levels:
+- Beginner (A1–A2)
+- Intermediate (B1–B2)
+- Advanced (C1–C2)
+
+Features:
+
+Vocabulary:
+- English words.
+- IPA pronunciation.
+- Khmer meaning.
+- English definitions.
+- Example sentences.
+- Audio pronunciation.
+- Flashcards.
+
+Grammar:
+- Grammar lessons.
+- Grammar exercises.
+- Sentence correction.
+- Interactive quizzes.
+
+Listening:
+- Audio exercises.
+- Multiple-choice questions.
+- Transcript after submission.
+- Listening comprehension.
+
+Speaking:
+- Voice recording.
+- Pronunciation exercises.
+- Speaking questions.
+- AI speaking feedback.
+
+Writing:
+- Essay writing.
+- Task-based writing.
+- Grammar correction.
+- Vocabulary suggestions.
+- AI feedback.
+
+## 8. Standardized Examination System
+
+Build a professional examination engine.
+
+Supported examination categories:
+
+CHINESE:
+- HSK 1–6.
+- HSK mock examinations.
+
+ENGLISH:
+- IELTS Academic.
+- IELTS General Training.
+- TOEFL iBT.
+- TOEIC.
+- Cambridge English.
+
+Each exam must have its own configuration, sections, timing, scoring rules, and question types based on the relevant examination format.
+
+Exam sections:
+- Listening
+- Reading
+- Writing
+- Speaking
+
+Question types:
+- Multiple Choice.
+- True / False.
+- Fill in the Blanks.
+- Matching.
+- Sentence Ordering.
+- Short Answer.
+- Essay Writing.
+- Audio-based Questions.
+- Speaking Recording.
+
+Exam features:
+- Real-time countdown timer.
+- Auto-save answers.
+- Question navigation.
+- Mark questions for review.
+- Submit confirmation.
+- Automatic scoring for objective questions.
+- Writing and Speaking evaluation.
+- Detailed result report.
+- Skill-by-skill performance analysis.
+
+Do not invent official scoring rules. Store exam configurations and scoring rubrics separately so administrators can update them.
+
+## 9. AI Language Tutor
+
+Build an AI-powered language assistant.
+
+Features:
+- Chat with AI in Chinese or English.
+- Explain grammar in Khmer.
+- Translate Chinese to Khmer and English.
+- Translate English to Khmer and Chinese.
+- Correct grammar.
+- Explain vocabulary.
+- Generate example sentences.
+- Create personalized exercises.
+- IELTS writing feedback.
+- Chinese writing feedback.
+- Speaking practice.
+- Personalized learning recommendations.
+
+AI feedback should explain mistakes and provide corrected examples rather than simply displaying a score.
+
+## 10. Admin Dashboard
+
+Create a complete administration system.
+
+Admin features:
+- Dashboard analytics.
+- Manage students.
+- Manage teachers.
+- Manage courses.
+- Manage Chinese and English lessons.
+- Manage vocabulary.
+- Manage grammar.
+- Manage questions.
+- Manage examination categories.
+- Manage exam configurations.
+- Manage answer keys.
+- Manage scoring rubrics.
+- Manage subscriptions.
+- Manage announcements.
+- Manage user reports.
+- View examination statistics.
+
+Question management must support:
+- Text.
+- Images.
+- Audio.
+- Video where applicable.
+- Multiple-choice answers.
+- Correct answers.
+- Explanations.
+- Difficulty levels.
+- Examination categories.
+
+## 11. Teacher Dashboard
+
+Teachers should be able to:
+- Create courses.
+- Upload lessons.
+- Create quizzes.
+- Create mock examinations.
+- Review writing submissions.
+- Review speaking recordings.
+- Track student performance.
+- Provide feedback.
+
+## 12. Database Design
+
+Design a normalized PostgreSQL database using Supabase.
+
+Suggested tables:
+
+- profiles
+- roles
+- courses
+- lessons
+- lesson_sections
+- vocabulary
+- grammar_topics
+- flashcards
+- exercises
+- questions
+- question_options
+- exams
+- exam_sections
+- exam_attempts
+- student_answers
+- exam_results
+- writing_submissions
+- speaking_submissions
+- learning_progress
+- study_streaks
+- achievements
+- subscriptions
+- notifications
+
+Implement:
+- Foreign keys.
+- Database indexes.
+- Appropriate constraints.
+- Row Level Security (RLS).
+- Secure role-based permissions.
+- Database migrations.
+
+Students must only access their own private results and submissions. Teachers and administrators must have appropriately restricted permissions.
+
+## 13. Subscription System
+
+Create Free and Premium plans.
+
+Free:
+- Limited daily lessons.
+- Basic vocabulary.
+- Limited practice tests.
+- Basic progress tracking.
+
+Premium:
+- Full courses.
+- Unlimited practice tests according to plan limits.
+- Full mock examinations.
+- AI tutor access according to plan limits.
+- Detailed analytics.
+- Advanced learning materials.
+
+Prepare payment architecture for Cambodian payment providers, including ABA PayWay, with secure server-side verification.
+
+## 14. Additional Features
+
+- Daily learning goals.
+- Daily reminders.
+- Achievement badges.
+- Leaderboard.
+- Bookmarks.
+- Search lessons.
+- Downloadable learning materials.
+- Certificate of course completion.
+- Learning history.
+- Student feedback system.
+
+Clearly distinguish platform-issued course completion certificates from official examination certificates.
+
+## 15. Security and Performance
+
+Implement:
+- Secure authentication.
+- Password hashing through the authentication provider.
+- Role-based access control.
+- Supabase RLS.
+- Server-side validation.
+- Rate limiting.
+- Secure file uploads.
+- Protected API endpoints.
+- Environment variables.
+- Error handling.
+- Loading states.
+- Empty states.
+- Responsive performance optimization.
+
+Never expose API keys or private credentials in frontend code.
+
+## 16. Development Instructions
+
+Build this project step by step.
+
+Phase 1: Project setup and UI design.
+
+Phase 2: Database architecture and authentication.
+
+Phase 3: Student dashboard.
+
+Phase 4: Chinese learning system.
+
+Phase 5: English learning system.
+
+Phase 6: Examination engine.
+
+Phase 7: AI tutor integration.
+
+Phase 8: Teacher and admin dashboards.
+
+Phase 9: Subscription and payment integration.
+
+Phase 10: Testing, security, and deployment.
+
+For each phase:
+- Explain what you are building.
+- Create the necessary files.
+- Provide complete working code.
+- Explain where each file belongs.
+- Explain how to install dependencies.
+- Explain how to configure environment variables.
+- Test each feature before proceeding.
+
+Do not create fake buttons or non-functional features.
+
+Do not use placeholder data as if it were real examination content.
+
+Use sample data only for clearly labeled demonstrations.
+
+## 17. Final Goal
+
+Deliver a complete, professional Chinese and English online learning and standardized examination preparation platform.
+
+The website must be easy for Cambodian students to understand, with Khmer explanations, English learning content, Chinese learning content, realistic practice examinations, AI-powered learning assistance, and detailed student performance analytics.
+
+Prioritize functionality, educational accuracy, security, scalability, and an excellent user experience.
